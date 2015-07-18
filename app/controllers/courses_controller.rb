@@ -3,6 +3,7 @@ class CoursesController < ApplicationController
   before_action :member_of_course, only: :show
 
   def show
+    authorize! :show, @course
   end
 
   private

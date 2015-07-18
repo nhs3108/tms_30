@@ -21,6 +21,11 @@
     </a>
     <span class="glyphicon glyphicon-arrow-right"></span>
   <% end %>
+  <br>
+  <% if can? :manage, @course %>
+    <%= link_to t("views.actions.manage"), "#",
+      class: "glyphicon glyphicon-plus pull-right" %>
+  <% end %>
 </div>
 <br>
 <div>
@@ -45,6 +50,9 @@
             <%= link_to supervisor.name, supervisor %>
             &nbsp; &nbsp; &nbsp; &nbsp;
           <% end %>
+          <% if can? :manage, @course %>
+            <%= link_to t("views.actions.manage"), "#", class: "glyphicon glyphicon-plus" %>
+          <% end %>
         </td>
       </tr>
       <tr>
@@ -57,6 +65,9 @@
             <span class="glyphicon glyphicon-user text-info"></span>&nbsp;
             <%= link_to user.name, user %>
             &nbsp; &nbsp; &nbsp; &nbsp;
+          <% end %>
+          <% if can? :manage, @course %>
+            <%= link_to t("views.actions.manage"), "#", class: "glyphicon glyphicon-plus" %>
           <% end %>
         </td>
       </tr>

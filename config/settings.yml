@@ -9,3 +9,8 @@ subjects:
   is_present: true
   min_c: 2
   max_c: 255
+courses:
+  per_page: 5
+  is_present: true
+  min_c: 2
+  max_c: 255

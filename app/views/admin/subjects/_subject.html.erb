@@ -7,13 +7,12 @@
     <b><%= t "subjects.description" %></b> : <%= subject.description %>
     <hr>
     <% subject.tasks.each_with_index do |task, index| %>
-      [<%= index + 1  %>]
+      [<%= index + 1 %>]
       <span class="glyphicon glyphicon-tags text-info"></span>
       &nbsp;<%= task.name %>
       &nbsp; &nbsp; &nbsp; &nbsp;
     <% end %>
   </td>
   <td><input type="checkbox"></td>
-  <td><%= link_to "", edit_admin_subject_path(subject),
-    class: "glyphicon glyphicon-edit" %></td>
+  <td><%= link_to "", edit_admin_subject_path(subject), class: "glyphicon glyphicon-edit" %></td>
 </tr>

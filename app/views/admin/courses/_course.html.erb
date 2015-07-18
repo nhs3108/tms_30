@@ -1,0 +1,32 @@
+<tr>
+  <td class="text-center">
+    <b><%= course.name %></b><br>
+    <%= pluralize course.course_subjects.count, t("views.subject") %><br>
+    <%= pluralize course.user_courses.count, t("views.user") %>
+  </td>
+  <td>
+    <b><%= t "courses.description" %></b> : <%= course.description %>
+    <hr>
+    <% course.subjects.each_with_index do |subject, index| %>
+      [<%= index + 1 %>]
+      <span class="glyphicon glyphicon-file text-info"></span>
+      &nbsp;<%= subject.name %>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+    <% end %>
+    <hr>
+    <% course.users.each_with_index do |user, index| %>
+      [<%= index + 1 %>]
+      <span class="glyphicon glyphicon-user text-info"></span>
+      &nbsp;<%= user.name %>
+      &nbsp; &nbsp; &nbsp; &nbsp;
+    <% end %>
+  </td>
+  <td class="text-center">
+    <b><%= pluralize course.date_duration, t("views.unit.day") %><b><br>
+    <% if course.closed? %>
+      <span class="label label-danger"><%= t "views.messages.closed" %></span>
+    <% end %>
+  </td>
+  <td><input type="checkbox"></td>
+  <td><%= link_to "", "#", class: "glyphicon glyphicon-edit" %></td>
+</tr>

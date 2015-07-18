@@ -58,9 +58,12 @@ en:
       welcome_admin: "Welcome to TMS's dashboard !"
       time_limit: "Time duration: "
       create_new_subject: "Create new subject"
+      update_subject: "Update the subject"
       detail: "Detail"
       create_successfully: "Create successfully !"
+      update_successfully: "Update successfully !"
       del_confirm_msg: "Are you sure to remove this item ?"
+      add_task_to_subject: "Add tasks in this subject"
     unit:
       hour: "hour"
     task: task

@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
   namespace :admin do
     root "dashboards#index"
-    resources :subjects, only: [:index, :new, :create]
+    resources :subjects, except: [:show, :destroy]
   end
 
   devise_for :users, path: "", path_names: {

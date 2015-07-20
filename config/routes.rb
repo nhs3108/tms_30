@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   namespace :admin do
     root "dashboards#index"
     resources :subjects, except: [:show, :destroy]
-    resources :courses, only: [:index]
+    resources :courses, only: [:index, :new, :create]
   end
 
   devise_for :users, path: "", path_names: {

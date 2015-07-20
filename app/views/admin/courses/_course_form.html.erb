@@ -1,0 +1,25 @@
+<%= form_for [:admin, course] do |f| %>
+  <%= render "shared/error_messages", object: course %>
+  <div class="field">
+    <%= f.label :name, class: "text-info" %><br>
+    <%= f.text_field :name, autofocus: true, class: "form-control",
+      placeholder: t("courses.name_placeholder") %>
+  </div>
+  <div class="field">
+    <%= f.label :description, class: "text-info" %>
+    <%= f.text_area :description, class: "form-control",
+      placeholder: t("courses.description_placeholder") %>
+  </div>
+  <h2><%= t "views.messages.add_subject_to_course" %></h2>
+  <div class="col-md-6">
+    <%= f.select :user_ids, options_for_select(@users.map{ |user| [user.name, user.id ] },
+      selected_key = f.object.user_ids), {}, {multiple: true, class: "form-control"} %>
+  </div>
+  <div class="col-md-6">
+    <%= f.select :subject_ids, options_for_select(@subjects.map{ |subject| [subject.name, subject.id ] },
+      selected_key = f.object.subject_ids), {}, {multiple: true, class: "form-control", size: 10} %>
+  </div>
+  <div class="actions">
+    <%= f.submit t("views.actions.done"), class: "btn btn-success btn-block" %>
+  </div>
+<% end %>

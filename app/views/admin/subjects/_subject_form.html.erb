@@ -18,7 +18,7 @@
   </div>
   <h2><%= t "views.messages.add_task_to_subject" %></h2>
   <div class="field">
-    <table class="table" data-confirm-msg="<%= t("views.messages.del_confirm_msg") %>"> 
+    <table class="table"> 
       <tbody>
         <%= f.fields_for :tasks do |builder| %>
           <%= render "task_fields", :f => builder %>

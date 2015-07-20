@@ -59,6 +59,7 @@ en:
       welcome_admin: "Welcome to TMS's dashboard !"
       time_limit: "Time duration: "
       create_new_subject: "Create new subject"
+      create_new_course: "Start a new course"
       update_subject: "Update the subject"
       detail: "Detail"
       create_successfully: "Create successfully !"
